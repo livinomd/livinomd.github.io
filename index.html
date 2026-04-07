@@ -60,6 +60,21 @@ transition:0.3s;
 transform:scale(1.02);
 }
 
+/* 兩張圖片並排 */
+
+.f1-images{
+display:flex;
+justify-content:center;
+gap:20px;
+margin-top:20px;
+flex-wrap:wrap;
+}
+
+.f1-images img{
+width:45%;
+max-width:400px;
+}  
+
 /* 車隊 */
 
 .teams{
@@ -155,7 +170,12 @@ Formula 1（F1）是世界最高等級的賽車運動，
 每年在全球各地舉辦分站賽，還有許多照片都能被粉絲做成梗圖，某個車手一直都是老四。
 </p>
 
-<img src="images/OIP (10).webp">
+<div class="f1-images">
+
+<img src="images/S__26149157_0.jpg">
+<img src="images/S__26149156_0.jpg">
+
+</div>
 
 </div>
 
