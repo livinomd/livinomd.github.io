@@ -4,6 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>我的履歷</title>
 
 <style>
@@ -13,57 +14,129 @@ margin:0;
 font-family:Arial;
 background:#111;
 color:white;
+}
+
+/* HERO */
+
+.hero{
+height:70vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#0077ff,#00c3ff);
 text-align:center;
 }
 
-header{
-background:#0077ff;
-padding:40px;
-}
-
-header h1{
+.hero h1{
+font-size:50px;
 margin:0;
-font-size:40px;
 }
 
-header p{
-opacity:0.8;
+.hero p{
+opacity:0.9;
 }
+
+button{
+padding:10px 20px;
+border:none;
+border-radius:20px;
+background:white;
+color:#0077ff;
+cursor:pointer;
+margin-top:10px;
+}
+
+/* SECTION */
 
 section{
-padding:50px 20px;
-max-width:900px;
+padding:60px 20px;
+max-width:1000px;
 margin:auto;
 }
 
 h2{
-color:#00aaff;
+text-align:center;
+margin-bottom:30px;
+}
+
+/* ABOUT */
+
+.about{
+text-align:center;
+line-height:1.8;
+}
+
+/* SKILLS */
+
+.skill{
+margin:15px 0;
+}
+
+.bar{
+background:#333;
+height:10px;
+border-radius:5px;
+}
+
+.progress{
+height:10px;
+background:#00aaff;
+border-radius:5px;
+}
+
+.html{width:90%;}
+.python{width:70%;}
+.arduino{width:65%;}
+.css{width:80%;}
+
+/* PROJECTS */
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.project{
+background:#1c1c1c;
+border-radius:10px;
+overflow:hidden;
+transition:0.3s;
+}
+
+.project:hover{
+transform:translateY(-10px);
+}
+
+.project img{
+width:100%;
+}
+
+.project-content{
+padding:15px;
+}
+
+/* TIMELINE */
+
+.timeline{
+border-left:2px solid #00aaff;
+padding-left:20px;
+}
+
+.timeline-item{
 margin-bottom:20px;
 }
 
-.card{
-background:#1c1c1c;
-padding:25px;
-margin:20px 0;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.5);
-}
+/* CONTACT */
 
-.skills{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:10px;
-}
-
-.skill{
-background:#0077ff;
-padding:10px 15px;
-border-radius:20px;
+.contact{
+text-align:center;
 }
 
 footer{
 background:#000;
+text-align:center;
 padding:20px;
 margin-top:40px;
 }
@@ -74,89 +147,145 @@ margin-top:40px;
 
 <body>
 
-<header>
+<!-- HERO -->
+
+<div class="hero">
 
 <h1>石承恩</h1>
-<p>學生 / 工程師 / 開發者</p>
 
-</header>
+<p>Student | Web Developer</p>
 
+<button onclick="document.getElementById('projects').scrollIntoView()">
+查看作品
+</button>
+
+</div>
+
+<!-- ABOUT -->
 
 <section>
 
 <h2>關於我</h2>
 
-<div class="card">
+<p class="about">
 
-<p>
-你好，我是一名對科技與程式設計有興趣的學生。
-目前正在學習 Arduino、Python、網頁開發與資料分析。
+你好，我是一名對科技與程式設計有興趣的學生。  
+目前正在學習 Web 開發、Python、Arduino 與資料分析。  
+
 </p>
-
-</div>
 
 </section>
 
+<!-- SKILLS -->
 
 <section>
 
 <h2>技能</h2>
 
-<div class="skills">
+<div class="skill">
+HTML
+<div class="bar"><div class="progress html"></div></div>
+</div>
 
-<div class="skill">HTML</div>
-<div class="skill">CSS</div>
-<div class="skill">Python</div>
-<div class="skill">Arduino</div>
-<div class="skill">GitHub</div>
+<div class="skill">
+CSS
+<div class="bar"><div class="progress css"></div></div>
+</div>
 
+<div class="skill">
+Python
+<div class="bar"><div class="progress python"></div></div>
+</div>
+
+<div class="skill">
+Arduino
+<div class="bar"><div class="progress arduino"></div></div>
 </div>
 
 </section>
 
+<!-- PROJECTS -->
 
-<section>
+<section id="projects">
 
-<h2>專案</h2>
+<h2>專案作品</h2>
 
-<div class="card">
+<div class="projects">
+
+<div class="project">
+
+<img src="images/f1project.jpg">
+
+<div class="project-content">
 
 <h3>F1 資訊網站</h3>
 
-<p>
-使用 HTML 與 GitHub Pages 建立 F1 賽車介紹網站，
-包含賽程、車隊、排行榜與影片。
-</p>
+<p>使用 HTML 與 GitHub Pages 建立 F1 賽程與車隊資訊網站。</p>
 
 </div>
 
-<div class="card">
+</div>
+
+<div class="project">
+
+<img src="images/sensor.jpg">
+
+<div class="project-content">
 
 <h3>感測器監控系統</h3>
 
-<p>
-使用 Arduino 與 Python 建立即時監控系統，
-可將感測器數據即時顯示與記錄。
-</p>
+<p>使用 Arduino 與 Python 製作即時監控系統。</p>
+
+</div>
+
+</div>
 
 </div>
 
 </section>
 
+<!-- TIMELINE -->
+
+<section>
+
+<h2>學習經歷</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<h3>2026</h3>
+<p>學習 Web 開發與網站設計</p>
+</div>
+
+<div class="timeline-item">
+<h3>2025</h3>
+<p>Arduino 感測器專案</p>
+</div>
+
+<div class="timeline-item">
+<h3>2024</h3>
+<p>Python 程式設計</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
 
 <section>
 
 <h2>聯絡我</h2>
 
-<div class="card">
+<div class="contact">
 
-<p>Email: your@email.com</p>
-<p>GitHub: github.com/yourname</p>
+<p>Email：your@email.com</p>
+
+<p>GitHub：github.com/yourname</p>
 
 </div>
 
 </section>
-
 
 <footer>
 
