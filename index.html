@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="zh-TW">
 
@@ -5,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>我的履歷</title>
+<title>石承恩 | 個人履歷</title>
 
 <style>
 
@@ -67,6 +68,20 @@ text-align:center;
 line-height:1.8;
 }
 
+/* EDUCATION */
+
+.education{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.edu-card{
+background:#1c1c1c;
+padding:20px;
+border-radius:10px;
+}
+
 /* SKILLS */
 
 .skill{
@@ -85,10 +100,10 @@ background:#00aaff;
 border-radius:5px;
 }
 
-.html{width:90%;}
+.cpp{width:75%;}
+.plc{width:60%;}
 .python{width:70%;}
 .arduino{width:65%;}
-.css{width:80%;}
 
 /* PROJECTS */
 
@@ -109,10 +124,6 @@ transition:0.3s;
 transform:translateY(-10px);
 }
 
-.project img{
-width:100%;
-}
-
 .project-content{
 padding:15px;
 }
@@ -126,6 +137,38 @@ padding-left:20px;
 
 .timeline-item{
 margin-bottom:20px;
+}
+
+/* CERTIFICATES */
+
+.certs{
+list-style:none;
+padding:0;
+max-width:500px;
+margin:auto;
+}
+
+.certs li{
+background:#1c1c1c;
+margin:10px 0;
+padding:15px;
+border-radius:8px;
+}
+
+/* INTEREST */
+
+.interests{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:10px;
+}
+
+.tag{
+background:#00aaff;
+padding:8px 15px;
+border-radius:20px;
+font-size:14px;
 }
 
 /* CONTACT */
@@ -153,7 +196,7 @@ margin-top:40px;
 
 <h1>石承恩</h1>
 
-<p>Student | Web Developer</p>
+<p>Student Developer | Python • Arduino • Web</p>
 
 <button onclick="document.getElementById('projects').scrollIntoView()">
 查看作品
@@ -176,6 +219,31 @@ margin-top:40px;
 
 </section>
 
+<!-- EDUCATION -->
+
+<section>
+
+<h2>學歷</h2>
+
+<div class="education">
+
+<div class="edu-card">
+<h3>高職</h3>
+<p>資訊相關科系</p>
+<p>2023 - 2026</p>
+</div>
+
+<div class="edu-card">
+<h3>專業課程</h3>
+<p>程式設計</p>
+<p>PLC控制</p>
+<p>Arduino開發</p>
+</div>
+
+</div>
+
+</section>
+
 <!-- SKILLS -->
 
 <section>
@@ -184,12 +252,12 @@ margin-top:40px;
 
 <div class="skill">
 C++
-<div class="bar"><div class="progress C++"></div></div>
+<div class="bar"><div class="progress cpp"></div></div>
 </div>
 
 <div class="skill">
 PLC
-<div class="bar"><div class="progress PLC"></div></div>
+<div class="bar"><div class="progress plc"></div></div>
 </div>
 
 <div class="skill">
@@ -218,7 +286,9 @@ Arduino
 
 <h3>F1 資訊網站</h3>
 
-<p>使用 HTML 與 GitHub Pages 建立簡易 F1 賽程與車隊資訊網站。</p>
+<p>
+使用 HTML 與 GitHub Pages 建立簡易 F1 賽程與車隊資訊網站。
+</p>
 
 </div>
 
@@ -228,9 +298,12 @@ Arduino
 
 <div class="project-content">
 
-<h3>簡易脈診研析</h3>
+<h3>簡易脈診研析系統</h3>
 
-<p>使用 Arduino 與 Python 製作即時監測系統，已達到能讓大眾用更簡易的方法了解基礎的病症。</p>
+<p>
+使用 Arduino 與 Python 製作即時監測系統，
+讓使用者能更簡易了解基礎身體狀況。
+</p>
 
 </div>
 
@@ -253,8 +326,44 @@ Arduino
 </div>
 
 <div class="timeline-item">
-<p>Arduino和python結合脈診研析</p>
+<p>Arduino 與 Python 結合脈診研析系統</p>
 </div>
+
+</div>
+
+</section>
+
+<!-- CERTIFICATES -->
+
+<section>
+
+<h2>證照</h2>
+
+<ul class="certs">
+
+<li>電腦軟體應用丙級</li>
+
+<li>工業電子丙級</li>
+
+<li>Python 程式設計課程證書</li>
+
+</ul>
+
+</section>
+
+<!-- INTEREST -->
+
+<section>
+
+<h2>個人興趣</h2>
+
+<div class="interests">
+
+<div class="tag">程式設計</div>
+<div class="tag">F1 賽車</div>
+<div class="tag">電子製作</div>
+<div class="tag">科技研究</div>
+<div class="tag">網站設計</div>
 
 </div>
 
@@ -268,9 +377,11 @@ Arduino
 
 <div class="contact">
 
-<p>Gmail：mks0958711915@gmail.com</p>
+<p>Email：mks0958711915@gmail.com</p>
 
-<p>電話號碼:0958-711915</p>
+<p>電話：0958-711915</p>
+
+<p>GitHub：github.com/你的帳號</p>
 
 </div>
 
@@ -278,7 +389,14 @@ Arduino
 
 <footer>
 
-© 2026 個人履歷網站
+© 2026 石承恩 個人履歷網站
+
+</footer>
+
+</body>
+</html>
+```
+
 
 </footer>
 
