@@ -10,11 +10,56 @@
 
 <style>
 
+/* 平滑滾動 */
+
+html{
+scroll-behavior:smooth;
+}
+
+/* BODY */
+
 body{
 margin:0;
 font-family:Arial;
 background:#111;
 color:white;
+}
+
+/* NAVBAR */
+
+.navbar{
+position:fixed;
+top:0;
+width:100%;
+background:#000;
+padding:15px 0;
+z-index:1000;
+}
+
+.nav-container{
+max-width:1000px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:0 20px;
+}
+
+.logo{
+font-weight:bold;
+font-size:18px;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+font-size:14px;
+transition:0.3s;
+}
+
+.nav-links a:hover{
+color:#00aaff;
 }
 
 /* HERO */
@@ -27,6 +72,7 @@ justify-content:center;
 align-items:center;
 background:linear-gradient(135deg,#0077ff,#00c3ff);
 text-align:center;
+margin-top:60px;
 }
 
 .hero h1{
@@ -58,7 +104,7 @@ margin:auto;
 
 h2{
 text-align:center;
-margin-bottom:30px;
+margin-bottom:40px;
 }
 
 /* ABOUT */
@@ -72,32 +118,48 @@ line-height:1.8;
 
 .education{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:20px;
 }
 
 .edu-card{
 background:#1c1c1c;
-padding:20px;
+padding:25px;
 border-radius:10px;
+}
+
+.edu-card h3{
+margin-top:0;
+color:#00aaff;
+}
+
+.course-list{
+padding-left:20px;
+line-height:1.8;
 }
 
 /* SKILLS */
 
 .skill{
-margin:15px 0;
+margin:20px 0;
 }
 
 .bar{
 background:#333;
 height:10px;
 border-radius:5px;
+overflow:hidden;
 }
 
 .progress{
 height:10px;
 background:#00aaff;
 border-radius:5px;
+animation:grow 2s ease;
+}
+
+@keyframes grow{
+from{width:0}
 }
 
 .cpp{width:75%;}
@@ -125,18 +187,12 @@ transform:translateY(-10px);
 }
 
 .project-content{
-padding:15px;
+padding:20px;
 }
 
-/* TIMELINE */
-
-.timeline{
-border-left:2px solid #00aaff;
-padding-left:20px;
-}
-
-.timeline-item{
-margin-bottom:20px;
+.project a{
+color:#00aaff;
+text-decoration:none;
 }
 
 /* CERTIFICATES */
@@ -175,7 +231,10 @@ font-size:14px;
 
 .contact{
 text-align:center;
+line-height:2;
 }
+
+/* FOOTER */
 
 footer{
 background:#000;
@@ -189,6 +248,30 @@ margin-top:40px;
 </head>
 
 <body>
+
+<!-- NAVBAR -->
+
+<div class="navbar">
+
+<div class="nav-container">
+
+<div class="logo">履歷</div>
+
+<div class="nav-links">
+
+<a href="#about">關於我</a>
+<a href="#education">學歷</a>
+<a href="#skills">技能</a>
+<a href="#projects">專案</a>
+<a href="#certs">證照</a>
+<a href="#interest">興趣</a>
+<a href="#contact">聯絡</a>
+
+</div>
+
+</div>
+
+</div>
 
 <!-- HERO -->
 
@@ -206,14 +289,14 @@ margin-top:40px;
 
 <!-- ABOUT -->
 
-<section>
+<section id="about">
 
 <h2>關於我</h2>
 
 <p class="about">
 
 你好，我是一名對科技與程式設計有興趣的學生。  
-目前正在學習 Web 開發、Python、Arduino 與資料分析。  
+目前正在學習 Web 開發、Python、Arduino 與資料分析。
 
 </p>
 
@@ -221,21 +304,29 @@ margin-top:40px;
 
 <!-- EDUCATION -->
 
-<section>
+<section id="education">
+
+<h2>學歷與專業課程</h2>
 
 <div class="education">
-<h2>學歷</h2>
-<h3>目前就讀勤益科技大學</h3>
+
+<div class="edu-card">
+<h3>國立勤益科技大學</h3>
 <p>智慧自動化工程系</p>
 </div>
 
 <div class="edu-card">
+
 <h3>專業課程</h3>
-<p>PLC</p>
-<p>Arduino</p>
-<p>C++</p>
-<p>Solidwork</p>
-<p>Matlab</p>
+
+<ul class="course-list">
+<li>PLC 控制</li>
+<li>Arduino 開發</li>
+<li>C++ 程式設計</li>
+<li>SolidWorks</li>
+<li>Matlab</li>
+</ul>
+
 </div>
 
 </div>
@@ -244,7 +335,7 @@ margin-top:40px;
 
 <!-- SKILLS -->
 
-<section>
+<section id="skills">
 
 <h2>技能</h2>
 
@@ -288,6 +379,8 @@ Arduino
 使用 HTML 與 GitHub Pages 建立簡易 F1 賽程與車隊資訊網站。
 </p>
 
+<a href="#">查看專案</a>
+
 </div>
 
 </div>
@@ -303,6 +396,8 @@ Arduino
 讓使用者能更簡易了解基礎身體狀況。
 </p>
 
+<a href="#">查看專案</a>
+
 </div>
 
 </div>
@@ -311,22 +406,17 @@ Arduino
 
 </section>
 
-<!-- TIMELINE -->
-
-
 <!-- CERTIFICATES -->
 
-<section>
+<section id="certs">
 
 <h2>證照</h2>
 
 <ul class="certs">
 
-<li>工業配線丙級</li>
-
-<li>數位邏輯乙級</li>
-
-<li>自動化工程師level 1</li>
+<li>工業配線 丙級</li>
+<li>數位邏輯 乙級</li>
+<li>自動化工程師 Level 1</li>
 
 </ul>
 
@@ -334,7 +424,7 @@ Arduino
 
 <!-- INTEREST -->
 
-<section>
+<section id="interest">
 
 <h2>個人興趣</h2>
 
@@ -342,7 +432,8 @@ Arduino
 
 <div class="tag">程式設計</div>
 <div class="tag">F1 賽車</div>
-<div class="tag">健身以及長途跑</div>
+<div class="tag">健身</div>
+<div class="tag">長跑</div>
 <div class="tag">科技研究</div>
 <div class="tag">網站設計</div>
 
@@ -352,7 +443,7 @@ Arduino
 
 <!-- CONTACT -->
 
-<section>
+<section id="contact">
 
 <h2>聯絡方式</h2>
 
